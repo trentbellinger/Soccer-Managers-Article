@@ -20,39 +20,6 @@ LeagueFinishesData <- data.frame(
 )
 
 # Average League Finish
-ggplot(LeagueFinishesData, aes(x=TeamOrder, y=AverageLeagueFinish, fill=Manager)) +
-  geom_bar(stat = "identity", position = "dodge") + 
-  scale_fill_manual(values = c("azure4", "red", "darkgray"), 
-                    labels = c("Previous Manager", "Jose Mourinho", "Subsequent Manager")) + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
-  geom_text(aes(label = AverageLeagueFinish), vjust = -0.5, position = position_dodge(.9), size = 4) +
-  geom_text(aes(label = NumberOfSeasons), hjust = 4.5, vjust = 2, position = position_dodge(.9), size = 2) + 
-  geom_text(aes(label = "season(s)"), hjust = 0.4, vjust = 2, position = position_dodge(.9), size = 2) +
-  labs (
-   x = "Soccer Team", 
-   y = "Average League Finish",  
-   title = "Average League Finish for Managers", 
-   fill = "Manager"
-  )
-
-# Average League Finish
-ggplot(LeagueFinishesData, aes(x=TeamOrder, y=NumberOfTrophies, fill=Manager)) +
-  geom_bar(stat = "identity", position = "dodge") + 
-  scale_fill_manual(values = c("azure4", "red", "darkgray"), 
-                    labels = c("Previous Manager", "Jose Mourinho", "Subsequent Manager")) + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
-  geom_text(aes(label = NumberOfTrophies), vjust = -1, position = position_dodge(.9), size = 4) +
-  geom_text(aes(label = NumberOfSeasons), hjust = 4.5, vjust = -0.5, position = position_dodge(.9), size = 2) + 
-  geom_text(aes(label = "season(s)"), hjust = 0.4, vjust = -0.5, position = position_dodge(.9), size = 2) +
-  ylim(0, 8) +
-  labs (
-    x = "Soccer Team", 
-    y = "Number of Trophies",  
-    title = "Number of Trophies Won for Managers", 
-    fill = "Manager"
-  )
-
-# Average League Finish
 ggplot(LeagueFinishesData, aes(x=TeamOrder, y=NumberOfTrophies, fill=Manager)) +
   geom_bar(stat = "identity", position = "dodge") + 
   scale_fill_manual(values = c("azure4", "red", "darkgray"), 
